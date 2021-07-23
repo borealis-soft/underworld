@@ -11,7 +11,6 @@ public class Flickering : MonoBehaviour
         light = GetComponent<Light>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         light.intensity = Mathf.Lerp(light.intensity, Random.Range(0, 10) != 0 ? 1 : 0, Time.deltaTime * 20f);

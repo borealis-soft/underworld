@@ -14,7 +14,6 @@ public class InventoryControls : MonoBehaviour
         inventory.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (inventory.activeSelf && Input.GetKeyDown(CloseKey))

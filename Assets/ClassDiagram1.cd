@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TowerFire" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYIAADBACAQAAAAAAEQAAAIAAAEAAAAAAAIACECACA=</HashCode>
+      <FileName>Assets\Scripts\TowerFire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackgroundMusic" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAgAAgAABAAAAAAAAAAAgAAAAQAAQAAAAAACAEA=</HashCode>
+      <FileName>Assets\Scripts\BackgroundMusic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuildProc" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQBAgAAACABEEAAAAAAAQAAACAAYAAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\BuildProc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraMove" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAACAAAAAAAAAAAAABAIAIgAAAIEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CameraMove.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cell" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIgAAACAAAAAAAAAgEAAAEAAAAAAAAAAAAAESCgA=</HashCode>
+      <FileName>Assets\Scripts\Cell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACgAAAKAAoAAAAAAAEIFBQAAAAAABQAAAAAABACA=</HashCode>
+      <FileName>Assets\Scripts\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyDeath" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\EnemyDeath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Flickering" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Flickering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fluctuations" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIAAAAABAAAAAAAAAAAAAAAQAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Fluctuations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FlyBullet" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAACAAAAAAAAAAACABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FlyBullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameMainMenu" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameMainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntroWait" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAQEA=</HashCode>
+      <FileName>Assets\Scripts\IntroWait.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryControls" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\InventoryControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoadUpgradeMenu" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAKAAAAAAACAAAAAAIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\LoadUpgradeMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuControls" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECQABAAAECADAAEACAIAAgQIAAAAAAAAgAAAAAgAAAE=</HashCode>
+      <FileName>Assets\Scripts\MainMenuControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PreparationSkeletonSkill" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PreparationSkeletonSkill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResourceManager" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAQAAACAABAEIAAACBAAAgAgAAAAAAAAAEBAAAQE=</HashCode>
+      <FileName>Assets\Scripts\ResourceManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RotateAround" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\RotateAround.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceletonSkill" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAAQAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceletonSkill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SettingsControls" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAAAAAAAAJAAIAIAACAAAAgAAAAAIAgBAQAAEA=</HashCode>
+      <FileName>Assets\Scripts\SettingsControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spawner" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAICAACJARBAAAAAAAAAAARAAAgEAgABAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Spawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StartPanel" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\StartPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SunControl" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACQAAAABAAAAAAAAAAJAAQAAAgAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SunControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tower" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACABAAAACAAAAAAAMABAAAAAAAAAAAASAAA=</HashCode>
+      <FileName>Assets\Scripts\Tower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerController" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAIAAAAABBAAAEAAAAAEAAAAFA=</HashCode>
+      <FileName>Assets\Scripts\TowerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

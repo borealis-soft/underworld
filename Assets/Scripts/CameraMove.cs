@@ -12,18 +12,7 @@ public class CameraMove : MonoBehaviour
     public KeyCode RightKey = KeyCode.D;
 
     private Vector3 lastPos;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    Debug.Log("Граница!");
-    //}
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(UpKey))

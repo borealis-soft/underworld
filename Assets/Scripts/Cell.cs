@@ -52,10 +52,4 @@ public class Cell : MonoBehaviour
         var hitColliders = Physics.OverlapBox(transform.position, boxSize * 0.5f, Quaternion.identity, LayerMask.GetMask("Default"));
         CanBuild = hitColliders.Length == 0;
     }
-
-    //private void OnDrawGizmosSelected()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireCube(transform.position, boxSize);
-    //}
 }
