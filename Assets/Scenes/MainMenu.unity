@@ -4814,11 +4814,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MusicList:
+  - {fileID: 8300000, guid: d827808c6f7b7304fb6a5350a02d94e3, type: 3}
+  - {fileID: 8300000, guid: 032202ca30cee5e4baf547880f4765b1, type: 3}
+  - {fileID: 8300000, guid: d12d7fb017a8d634183ac488167f6bf9, type: 3}
+  - {fileID: 8300000, guid: c64787c81b55bde499dcf74a6eba7e6d, type: 3}
+  - {fileID: 8300000, guid: a3f03ffb8aeca114e9f9030a98dd268b, type: 3}
   - {fileID: 8300000, guid: 9b63192b3b5b83247affb27fa60e54a3, type: 3}
+  - {fileID: 8300000, guid: 40f9551b541db47409a1f17fd71f6e54, type: 3}
+  - {fileID: 8300000, guid: 3dba495b685db4d468a945131962c9da, type: 3}
   - {fileID: 8300000, guid: 9d83cd664a175ab48a648a71cd08e167, type: 3}
   - {fileID: 8300000, guid: c7001370136b8dd4c9e7ebc74b71a717, type: 3}
+  - {fileID: 8300000, guid: 59ecd766ef8f21b4c9fa35688a29f255, type: 3}
+  - {fileID: 8300000, guid: 0cbaadea5ffb57e42a08ccee22c6d304, type: 3}
   - {fileID: 8300000, guid: 3233c4d0dc643ca489f8150447f2e959, type: 3}
-  DelayPlaing: 5
+  DelayPlaing: 1
 --- !u!82 &1907929566
 AudioSource:
   m_ObjectHideFlags: 0

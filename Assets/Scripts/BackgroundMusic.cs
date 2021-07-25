@@ -10,8 +10,9 @@ public class BackgroundMusic : MonoBehaviour
     public int DelayPlaing = 1;
 
     private AudioSource myAudio;
-    private int current;
+    private int currentAudioId;
     private float time = 0;
+
     private void Awake()
     {
         if (Instance) Destroy(gameObject);
@@ -25,21 +26,22 @@ public class BackgroundMusic : MonoBehaviour
 
     private void MixList()
     {
-        current = 0;
+        currentAudioId = 0;
         MusicList.Sort((clip1, clip2) => Random.Range(-1, 1));
     }
 
     private void FixedUpdate()
     {
-        if (!myAudio.isPlaying && current < MusicList.Count)
-        {
-            if (time > 0) time -= Time.deltaTime;
-            else
+        if (!myAudio.isPlaying)
+            if (currentAudioId < MusicList.Count)
             {
-                myAudio.PlayOneShot(MusicList[current++]);
-                time = DelayPlaing;
+                if (time > 0) time -= Time.deltaTime;
+                else
+                {
+                    myAudio.PlayOneShot(MusicList[currentAudioId++]);
+                    time = DelayPlaing;
+                }
             }
-        }
-        else if (current == MusicList.Count) MixList();
+            else MixList();
     }
 }
