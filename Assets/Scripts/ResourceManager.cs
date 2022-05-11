@@ -23,6 +23,7 @@ public class ResourceManager : MonoBehaviour
         defaultHP = playerHP;
         goldStr = GoldText.text;
         HPstr = HP_Text.text;
+        MainMenuControls.Instance.ResetAll += Reset;
     }
 
     void Update()
@@ -51,7 +52,7 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
-    public void Reset()
+    private void Reset()
     {
         gold = defaulGold;
         playerHP = defaultHP;

@@ -26,21 +26,23 @@ public class TowerFire : MonoBehaviour
 
     void Update()
     {
+        for (int i = 0; i < enemyTargets.Length; i++)
+            if (IsTargetUseless(enemyTargets[i]))
+                enemyTargets[i] = ClosestEnemy();
+
         if (timeToFire >= 0)
             timeToFire -= Time.deltaTime;
         else
             Fire();
 
-        for (int i = 0; i < enemyTargets.Length; i++)
-            if (IsTargetUseless(enemyTargets[i]))
-                enemyTargets[i] = ClosestEnemy();
-
         if (MaxTargetCount == 1 && enemyTargets[0])
-        {
-            Vector3 lookAt = enemyTargets[0].position;
-            lookAt.y = gun.position.y;
-            gun.rotation = Quaternion.Slerp(gun.rotation, Quaternion.LookRotation(lookAt - gun.position), Time.deltaTime * TurningSpeed);
-        }
+            EnemyTraking(enemyTargets[0].position);
+    }
+
+    private void EnemyTraking(Vector3 lookAt)
+    {
+        lookAt.y = gun.position.y;
+        gun.rotation = Quaternion.Slerp(gun.rotation, Quaternion.LookRotation(lookAt - gun.position), Time.deltaTime * TurningSpeed);
     }
 
     private bool IsTargetUseless(Transform targ)

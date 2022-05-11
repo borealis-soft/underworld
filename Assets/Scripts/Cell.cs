@@ -18,6 +18,7 @@ public class Cell : MonoBehaviour
     {
         CheckObj();
         defaultFlagBuild = CanBuild;
+        MainMenuControls.Instance.ResetAll += () => CanBuild = defaultFlagBuild;
     }
 
     private void OnEnable()

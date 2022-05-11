@@ -13,7 +13,14 @@ public class StartPanel : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        bool PushStartBtn = false;
+#if UNITY_STANDALONE
+        PushStartBtn = Input.GetKey(KeyCode.Space);
+#endif
+#if UNITY_ANDROID
+        PushStartBtn = Input.touchCount != 0 && Input.GetTouch(0).phase == TouchPhase.Ended;
+#endif
+        if (PushStartBtn)
         {
             gameObject.SetActive(false);
             menuControls.enabled = true;

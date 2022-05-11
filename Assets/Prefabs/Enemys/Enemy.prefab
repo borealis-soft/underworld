@@ -51,7 +51,7 @@ MonoBehaviour:
   Mooving: 1
   Speed: 0.6
   RotateSpeed: 5
-  MaxHP: 400
+  MaxHP: 600
   PlayerDamage: 1
   enemyCost: 30
 --- !u!136 &7817899205446693593

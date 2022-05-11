@@ -19,13 +19,13 @@ public class Enemy : MonoBehaviour
 
     private Transform currentPoint;
     private Vector3 direction;
-    private int index;
+    private int currentPointID;
     public float HP { get; set; }
 
     void Start()
     {
-        index = 0;
-        currentPoint = Points[index];
+        currentPointID = 0;
+        currentPoint = Points[currentPointID];
         HP = MaxHP;
     }
 
@@ -63,14 +63,13 @@ public class Enemy : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, currentPoint.position, Speed * Time.deltaTime);
         if (transform.position == currentPoint.position)
         {
-            index++;
-            if (index >= Points.Length)
+            currentPointID++;
+            if (currentPointID >= Points.Length)
             {
                 Destroy(gameObject);
                 OnPass(PlayerDamage);
             }
-            else
-                currentPoint = Points[index];
+            else currentPoint = Points[currentPointID];
         }
     }
 }

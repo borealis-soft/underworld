@@ -21,9 +21,13 @@ public class TowerController : MonoBehaviour
         int towerCost = buildingTower.GetComponent<BuildProc>().TowerCost;
         if (resourceManager.Gold >= towerCost)
         {
+            //делается на сервере
             resourceManager.BuildTower(towerCost);
-            Instantiate(buildingTower, cell.transform.position, buildingTower.transform.rotation, transform).GetComponent<BuildProc>();
+                //делается у всех клиентов
+            Instantiate(buildingTower, cell.transform.position, buildingTower.transform.rotation, transform);
+                ////////////
             cell.CanBuild = false;
+            ////////
             cell = null;
             towerInventoryMenu.SetActive(false);
         }
@@ -35,9 +39,13 @@ public class TowerController : MonoBehaviour
         int towerCost = TowerUpgrade.TowerCost;
         if (resourceManager.Gold >= towerCost)
         {
+            //делается на сервере
             resourceManager.BuildTower(towerCost);
+                //делается у всех клиентов
             Instantiate(TowerUpgrade, lastTower.transform.position, lastTower.transform.rotation, lastTower.transform.parent);
             Destroy(lastTower);
+                //////
+            /////////
             towerUpgradeMenu.SetActive(false);
         }
         else GetComponent<AudioSource>().Play();

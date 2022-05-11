@@ -207,7 +207,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261846271263552670}
-  m_Mesh: {fileID: -9095756691196027722, guid: e951aa2b18fdba3448fc4634a8f91bd0, type: 3}
+  m_Mesh: {fileID: -9095756691196027722, guid: 747d89f4d5713a745a7a550f78c744c1, type: 3}
 --- !u!23 &8097875436401012815
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Radius: 4
   FireDelay: 1.5
-  Damage: 90
+  Damage: 140
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -309,7 +309,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918391619943162171}
-  m_Mesh: {fileID: 6532508685850981849, guid: e951aa2b18fdba3448fc4634a8f91bd0, type: 3}
+  m_Mesh: {fileID: 6532508685850981849, guid: 747d89f4d5713a745a7a550f78c744c1, type: 3}
 --- !u!23 &3063229905063545377
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -420,7 +420,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7124865520776556252}
-  m_Mesh: {fileID: 873937819269256148, guid: e951aa2b18fdba3448fc4634a8f91bd0, type: 3}
+  m_Mesh: {fileID: 873937819269256148, guid: 747d89f4d5713a745a7a550f78c744c1, type: 3}
 --- !u!23 &4941485514803952158
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 8891463643237938055}
   - component: {fileID: 4515127098618499124}
   - component: {fileID: 62869548531748961}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower LvL 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,10 +490,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8848176143161758315}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -8, y: 0, z: -50}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1979878292461376721}
+  - {fileID: 8653596234400392707}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -515,6 +516,8 @@ MonoBehaviour:
   - {fileID: 3063229905063545377}
   TowerUpgrades:
   - {fileID: 33263130953368147, guid: 85eacb8ff1bde984d8f8b7faba97a1e7, type: 3}
+  NetTowerUpgrades: 02000000
+  Radius: {fileID: 9105355007521300379}
   selectMaterial: {fileID: 2100000, guid: 8d22b284d5dbb1541823d40efe7cb9e8, type: 2}
 --- !u!114 &8891463643237938055
 MonoBehaviour:
@@ -532,7 +535,7 @@ MonoBehaviour:
   fireScript: {fileID: 6637410206523003804}
   prevMaterial: {fileID: 2100000, guid: 747712041556e3846aec2597caf60781, type: 2}
   timeToBuild: 3
-  TowerCost: 120
+  TowerCost: 140
   buildingAudios:
   - {fileID: 8300000, guid: abfea298b429187478088c001425b67e, type: 3}
   - {fileID: 8300000, guid: d9ffad3db923b3f46b4ed43b86c24ac4, type: 3}
@@ -648,3 +651,85 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &9105355007521300379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8653596234400392707}
+  - component: {fileID: 3896139393011372604}
+  m_Layer: 0
+  m_Name: Radius
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8653596234400392707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105355007521300379}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.06}
+  m_LocalScale: {x: 8, y: 8, z: 6}
+  m_Children: []
+  m_Father: {fileID: 1719696060386987808}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &3896139393011372604
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105355007521300379}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.039215688}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
