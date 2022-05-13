@@ -45,7 +45,8 @@ public class Enemy : MonoBehaviour
             HP -= other.GetComponent<FlyBullet>().Damage;
             if (HP <= 0)
             {
-                if (PlayerResourses.Singleton.side.Value != Side_ || GameMode.Singleton == null || GameMode.Singleton.gameMod == GameMode.GameMods.SingleGame)
+                if (GameMode.Singleton == null || GameMode.Singleton.gameMod == GameMode.GameMods.SingleGame || 
+                    PlayerResourses.Singleton.side.Value != Side_)
                     OnDeath(enemyCost);
                 Animator animator = GetComponent<Animator>();
                 if (!animator)
@@ -70,7 +71,8 @@ public class Enemy : MonoBehaviour
             if (currentPointID >= Points.Length)
             {
                 Destroy(gameObject);
-                if (PlayerResourses.Singleton.side.Value != Side_ || GameMode.Singleton == null || GameMode.Singleton.gameMod == GameMode.GameMods.SingleGame)
+                if (GameMode.Singleton == null || GameMode.Singleton.gameMod == GameMode.GameMods.SingleGame || 
+                    PlayerResourses.Singleton.side.Value != Side_)
                     OnPass(PlayerDamage);
             }
             else currentPoint = Points[currentPointID];

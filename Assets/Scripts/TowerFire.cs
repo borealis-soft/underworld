@@ -110,7 +110,7 @@ public class TowerFire : MonoBehaviour
         if (haveTarget)
         {
             timeToFire = FireDelay;
-            var audio = transform.GetChild(0).GetComponent<AudioSource>();
+            var audio = gun.GetComponent<AudioSource>();
             if (audio) audio.PlayOneShot(audio.clip);
         }
     }

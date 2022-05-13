@@ -540,7 +540,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 3203922088482268896, guid: 723c71f23998b65438b965b73a3245cd, type: 3}
   TurningSpeed: 13
   MaxTargetCount: 1
-  gun: {fileID: 0}
+  gun: {fileID: 6036522012162884732}
 --- !u!136 &4515127098618499124
 CapsuleCollider:
   m_ObjectHideFlags: 0
