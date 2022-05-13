@@ -11,15 +11,15 @@ public class TowerFire : MonoBehaviour
     public float TurningSpeed;
     [Min(1)]
     public int MaxTargetCount = 1;
+    public Transform gun;
 
     private float timeToFire;
-    private Transform gun, firePoint;
+    private Transform firePoint;
     private Transform[] enemyTargets;
 
     void Start()
     {
         timeToFire = FireDelay;
-        gun = transform.GetChild(0);
         firePoint = gun.GetChild(0);
         enemyTargets = new Transform[MaxTargetCount];
     }
@@ -47,8 +47,13 @@ public class TowerFire : MonoBehaviour
 
     private bool IsTargetUseless(Transform targ)
     {
-        return !targ || Vector3.Distance(transform.position, targ.position) > Radius
-            || !targ.GetComponent<CapsuleCollider>().enabled;
+        if (targ != null)
+        {
+            var hitBarrierColliders = GetBarrierColliders(targ);
+            return Vector3.Distance(transform.position, targ.position) > Radius
+            || !targ.GetComponent<CapsuleCollider>().enabled || hitBarrierColliders.Length != 0;
+        }
+        return true;
     }
 
     private Transform ClosestEnemy()
@@ -56,7 +61,9 @@ public class TowerFire : MonoBehaviour
         List<Collider> enemyColliders = new List<Collider>(Physics.OverlapSphere(transform.position, Radius, EnemyLayer));
         for (int i = 0; i < enemyColliders.Count;)
         {
-            if (!enemyTargets.Contains(enemyColliders[i].transform)) i++;
+            var hitBarrierColliders = GetBarrierColliders(enemyColliders[i].transform);
+            if (!enemyTargets.Contains(enemyColliders[i].transform) && hitBarrierColliders.Length == 0) 
+                i++;
             else enemyColliders.RemoveAt(i);
         }
         if (enemyColliders.Count > 0)
@@ -75,6 +82,12 @@ public class TowerFire : MonoBehaviour
             return enemyColliders[minId].transform;
         }
         return null;
+    }
+
+    private RaycastHit[] GetBarrierColliders(Transform targ)
+    {
+        Ray ray = new Ray(firePoint.position, targ.transform.position - firePoint.position);
+        return Physics.RaycastAll(ray, Radius, LayerMask.GetMask("Barrier"));
     }
 
     private void SpawnBullet(int targetId)

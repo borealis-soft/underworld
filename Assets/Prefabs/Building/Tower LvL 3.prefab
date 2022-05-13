@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8934197348220106909}
   - component: {fileID: 361186769907806512}
   - component: {fileID: 935337013802784942}
+  - component: {fileID: 5236196082192627863}
   - component: {fileID: 7733692705574904734}
   m_Layer: 8
   m_Name: Tower LvL 3
@@ -27,15 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33263130953368147}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4097999839457061069}
-  - {fileID: 6181647854442232654}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8934197348220106909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,7 +52,9 @@ MonoBehaviour:
   - {fileID: 4636166720009242006}
   - {fileID: 8129792597602724928}
   - {fileID: 6702571338920333481}
+  side: 0
   TowerUpgrades: []
+  NetTowerUpgrades: 
   Radius: {fileID: 6373498316446167759}
   selectMaterial: {fileID: 2100000, guid: 8d22b284d5dbb1541823d40efe7cb9e8, type: 2}
 --- !u!114 &361186769907806512
@@ -67,9 +69,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195d88907dce0134b93d0a109195be5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerScript: {fileID: 8934197348220106909}
-  fireScript: {fileID: 1384457812258186144}
-  prevMaterial: {fileID: 2100000, guid: 747712041556e3846aec2597caf60781, type: 2}
   timeToBuild: 4
   TowerCost: 150
   buildingAudios:
@@ -77,6 +76,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d9ffad3db923b3f46b4ed43b86c24ac4, type: 3}
   Title: "\u0411\u0430\u0448\u043D\u044F LvL 3"
   SpritePrev: {fileID: 21300000, guid: a4266eb9d5195d940b9cc8ac51f12192, type: 3}
+  prevMaterial: {fileID: 2100000, guid: 747712041556e3846aec2597caf60781, type: 2}
 --- !u!136 &935337013802784942
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -89,8 +89,30 @@ CapsuleCollider:
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1.7
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.7}
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!114 &5236196082192627863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33263130953368147}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8195be3547fc675468219d3a3791097e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 4.5
+  FireDelay: 1.5
+  Damage: 225
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  BulletPrefab: {fileID: 3203922088482268896, guid: 723c71f23998b65438b965b73a3245cd, type: 3}
+  TurningSpeed: 13
+  MaxTargetCount: 1
+  gun: {fileID: 0}
 --- !u!82 &7733692705574904734
 AudioSource:
   m_ObjectHideFlags: 0
@@ -279,7 +301,6 @@ GameObject:
   - component: {fileID: 4097999839457061069}
   - component: {fileID: 1846863087922067996}
   - component: {fileID: 4636166720009242006}
-  - component: {fileID: 1384457812258186144}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -294,15 +315,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3557571760093450632}
-  m_LocalRotation: {x: -0.00000008940697, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 3061511562329613563}
   - {fileID: 7334473715198721761}
+  - {fileID: 6181647854442232654}
   m_Father: {fileID: 229832605640230685}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &1846863087922067996
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -352,27 +374,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1384457812258186144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3557571760093450632}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8195be3547fc675468219d3a3791097e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Radius: 4.5
-  FireDelay: 1.5
-  Damage: 225
-  EnemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  BulletPrefab: {fileID: 3203922088482268896, guid: 723c71f23998b65438b965b73a3245cd, type: 3}
-  TurningSpeed: 13
-  MaxTargetCount: 1
 --- !u!1 &3889086585104999145
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,12 +563,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6373498316446167759}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.06}
-  m_LocalScale: {x: 9, y: 9, z: 6}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.001}
+  m_LocalScale: {x: 0.45000002, y: 0.45, z: 0.29999995}
   m_Children: []
-  m_Father: {fileID: 229832605640230685}
-  m_RootOrder: 1
+  m_Father: {fileID: 4097999839457061069}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &833386115860498294
 SpriteRenderer:

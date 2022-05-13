@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Enemy : MonoBehaviour
     public float Speed, RotateSpeed;
     public float MaxHP;
     public int PlayerDamage;
+    public Side Side_ = Side.None;
 
     [SerializeField]
     private int enemyCost;
@@ -43,7 +45,8 @@ public class Enemy : MonoBehaviour
             HP -= other.GetComponent<FlyBullet>().Damage;
             if (HP <= 0)
             {
-                OnDeath(enemyCost);
+                if (PlayerResourses.Singleton.side.Value != Side_ || GameMode.Singleton == null || GameMode.Singleton.gameMod == GameMode.GameMods.SingleGame)
+                    OnDeath(enemyCost);
                 Animator animator = GetComponent<Animator>();
                 if (!animator)
                     Destroy(gameObject);
@@ -67,7 +70,8 @@ public class Enemy : MonoBehaviour
             if (currentPointID >= Points.Length)
             {
                 Destroy(gameObject);
-                OnPass(PlayerDamage);
+                if (PlayerResourses.Singleton.side.Value != Side_ || GameMode.Singleton == null || GameMode.Singleton.gameMod == GameMode.GameMods.SingleGame)
+                    OnPass(PlayerDamage);
             }
             else currentPoint = Points[currentPointID];
         }

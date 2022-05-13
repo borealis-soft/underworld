@@ -11967,7 +11967,7 @@ MonoBehaviour:
         m_MethodName: BuildInCell
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 9080344992672920349, guid: d2606f8c69c3bab4a96974516e400e91, type: 3}
+          m_ObjectArgument: {fileID: 1288526780315445546, guid: d2606f8c69c3bab4a96974516e400e91, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -13062,7 +13062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b943c9ac61d17a4fa2b7a0291d5c1d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
+  Speed: 5
   ZoomSpeed: 20
   UpKey: 119
   DownKey: 115
@@ -13408,7 +13408,7 @@ MonoBehaviour:
         m_MethodName: BuildInCell
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4146127494775585150, guid: a0fe5c6ad5c220448b7d23eeccb46d8a, type: 3}
+          m_ObjectArgument: {fileID: 3521292684254785848, guid: a0fe5c6ad5c220448b7d23eeccb46d8a, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -27939,6 +27939,10 @@ PrefabInstance:
     - target: {fileID: 812631634393340489, guid: a17c5b229b1e20346b688e5ff4a6ca6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 158.963
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323752733949212521, guid: a17c5b229b1e20346b688e5ff4a6ca6d, type: 3}
+      propertyPath: TowerUpgrades.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a17c5b229b1e20346b688e5ff4a6ca6d, type: 3}

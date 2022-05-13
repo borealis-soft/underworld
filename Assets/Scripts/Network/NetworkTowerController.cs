@@ -35,8 +35,9 @@ public class NetworkTowerController : Singleton<NetworkTowerController>
         int towerCost = ((GameObject)towersUpgradeMap[(Towers)buildingTower]).GetComponent<BuildProc>().TowerCost;
         if (PlayerResourses.Singleton.Gold >= towerCost)
         {
+            ulong thisClientId = PlayerResourses.Singleton.OwnerClientId;
             //делается на сервере
-            PlayerResourses.Singleton.BuildTowerServerRpc((Towers)buildingTower, cell.transform.position);
+            PlayerResourses.Singleton.BuildTowerServerRpc((Towers)buildingTower, cell.transform.position, thisClientId);
             cell = null;
             towerInventoryMenu.SetActive(false);
         }

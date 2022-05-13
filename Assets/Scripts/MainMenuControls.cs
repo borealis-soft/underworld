@@ -15,9 +15,9 @@ public class MainMenuControls : MonoBehaviour
     private GameObject MenuPanel;
     [SerializeField]
     private GameObject Settings;
-    [SerializeField]
-    private GameObject WinMenu;
 
+    public GameObject WinMenu;
+    public GameObject LoseMenu;
     public Spawner[] spawners;
     public Transform Towers;
     public Transform directionalLight;

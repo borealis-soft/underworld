@@ -4426,6 +4426,16 @@ MonoBehaviour:
       OverridingTargetPrefab: {fileID: 0}
     - Override: 0
       Prefab: {fileID: 6830494316044421595, guid: f8c16d50b240f9148a7210fa883b3066, type: 3}
+      SourcePrefabToOverride: {fileID: 6830494316044421595, guid: f8c16d50b240f9148a7210fa883b3066, type: 3}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
+    - Override: 0
+      Prefab: {fileID: 3028940931564352129, guid: d1891598f039e7f459443430d77cd887, type: 3}
+      SourcePrefabToOverride: {fileID: 3028940931564352129, guid: d1891598f039e7f459443430d77cd887, type: 3}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
+    - Override: 0
+      Prefab: {fileID: 4538778275372169837, guid: c347f01e79f8ab64c83b2b8d8313de2c, type: 3}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
@@ -7104,7 +7114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1907929565
 MonoBehaviour:
   m_ObjectHideFlags: 0

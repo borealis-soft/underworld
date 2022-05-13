@@ -20,7 +20,7 @@ public class NetworkCell : MonoBehaviour
     {
         get 
         {
-            return PlayerResourses.Singleton != null & side == PlayerResourses.Singleton.side.Value; 
+            return PlayerResourses.Singleton != null && side == PlayerResourses.Singleton.side.Value; 
         }
     } 
 
@@ -70,6 +70,7 @@ public class NetworkCell : MonoBehaviour
 
 public enum Side
 {
+    None,
     Dire,
     Radiant,
     Viewer

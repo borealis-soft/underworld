@@ -5,8 +5,6 @@ using Unity.Netcode;
 
 public class PlayersManager : Singleton<PlayersManager>
 {
-    public static ulong player1Id = 0, player2Id = ulong.MaxValue;
-
     private NetworkVariable<int> playersInGame = new NetworkVariable<int>();
 
     public int PlayersInGame
@@ -23,14 +21,18 @@ public class PlayersManager : Singleton<PlayersManager>
             {
                 Debug.Log($"Игрок {id} подключился...");
                 playersInGame.Value++;
-                var player = NetworkManager.Singleton.ConnectedClients[id].PlayerObject.GetComponent<PlayerResourses>();
-                if (player2Id == ulong.MaxValue)
+                if (playersInGame.Value == 1)
                 {
-                    player2Id = id;
-                    player.side.Value = Side.Radiant;
+                    PlayerResourses player = NetworkManager.ConnectedClients[id].PlayerObject.gameObject.GetComponent<PlayerResourses>();
+                    player.callbackApponentRpcParams.Send = new ClientRpcSendParams
+                    {
+                        TargetClientIds = new ulong[] { 0 }
+                    };
                 }
-                else
-                    player.side.Value = Side.Viewer;
+            }
+            else
+            {
+                Debug.Log($"Я подключился...");
             }
         };
 
@@ -41,8 +43,6 @@ public class PlayersManager : Singleton<PlayersManager>
             {
                 Debug.Log($"Игрок {id} отключился...");
                 playersInGame.Value--;
-                if (player2Id == id)
-                    player2Id = ulong.MaxValue;
             }
         };
     }

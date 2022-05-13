@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\TowerFire.cs" />
     <Compile Include="Assets\Scripts\IntroWait.cs" />
+    <Compile Include="Assets\Scripts\Network\NetworkSpawner.cs" />
     <Compile Include="Assets\Scripts\PreparationSkeletonSkill.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
@@ -79,12 +80,14 @@
     <Compile Include="Assets\Scripts\EnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\TowerController.cs" />
+    <Compile Include="Assets\Scripts\Temprory\CameraOn.cs" />
     <Compile Include="Assets\Костыльище.cs" />
     <Compile Include="Assets\Scripts\Network\UIManager.cs" />
     <Compile Include="Assets\Scripts\InventoryControls.cs" />
     <Compile Include="Assets\Scripts\Tower.cs" />
     <Compile Include="Assets\Scripts\SettingsControls.cs" />
     <Compile Include="Assets\Scripts\RotateAround.cs" />
+    <Compile Include="Assets\Scripts\Network\SpawnTower.cs" />
     <Compile Include="Assets\Scripts\SceletonSkill.cs" />
     <Compile Include="Assets\Scripts\Network\NetworkCell.cs" />
     <Compile Include="Assets\Scripts\LoadUpgradeMenu.cs" />
@@ -93,7 +96,6 @@
     <Compile Include="Assets\Scripts\Network\NetworkTowerController.cs" />
     <Compile Include="Assets\Scripts\Network\StartConnect.cs" />
     <Compile Include="Assets\Scripts\Network\GameMode.cs" />
-    <Compile Include="Assets\Scripts\Temprory\CameraOn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

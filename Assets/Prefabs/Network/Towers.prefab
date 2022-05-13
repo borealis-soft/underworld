@@ -56,17 +56,17 @@ MonoBehaviour:
   - id: 2
     towerPrefab: {fileID: 33263130953368147, guid: 85eacb8ff1bde984d8f8b7faba97a1e7, type: 3}
   - id: 6
-    towerPrefab: {fileID: 9080344992672920349, guid: d2606f8c69c3bab4a96974516e400e91, type: 3}
+    towerPrefab: {fileID: 1288526780315445546, guid: d2606f8c69c3bab4a96974516e400e91, type: 3}
   - id: 7
-    towerPrefab: {fileID: 3011533251382526303, guid: a9d109d486053fb4ebdc40c2a79b20d1, type: 3}
+    towerPrefab: {fileID: 1907869480313651697, guid: a9d109d486053fb4ebdc40c2a79b20d1, type: 3}
   - id: 8
-    towerPrefab: {fileID: 4683149858474915007, guid: a852df6d3eb721a4ca80969d56e2cc74, type: 3}
+    towerPrefab: {fileID: 6248750857123509153, guid: a852df6d3eb721a4ca80969d56e2cc74, type: 3}
   - id: 3
-    towerPrefab: {fileID: 4146127494775585150, guid: a0fe5c6ad5c220448b7d23eeccb46d8a, type: 3}
+    towerPrefab: {fileID: 3521292684254785848, guid: a0fe5c6ad5c220448b7d23eeccb46d8a, type: 3}
   - id: 4
-    towerPrefab: {fileID: 282835834964195848, guid: d123bffb40c978145aaf4ff5082eacc0, type: 3}
+    towerPrefab: {fileID: 9106687064387125434, guid: d123bffb40c978145aaf4ff5082eacc0, type: 3}
   - id: 5
-    towerPrefab: {fileID: 3741899750012609187, guid: 01ad2d338713d6e469019b357cbae31f, type: 3}
+    towerPrefab: {fileID: 3490232154408986356, guid: 01ad2d338713d6e469019b357cbae31f, type: 3}
   - id: 9
     towerPrefab: {fileID: 984693596158939096, guid: 876338a84df6c314fa68ab08ecdb3f9d, type: 3}
 --- !u!82 &6830494316044421541

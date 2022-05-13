@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanBuild: 0
+  side: 1
+  buildTowers: 
   mainMaterial: {fileID: 2100000, guid: 78b6f13f3d44ff143ac3415cc15e0e4d, type: 2}
   overMaterial: {fileID: 2100000, guid: dee73c0d134587d4a893f64436dd345d, type: 2}
   boxSize: {x: 0.85, y: 3, z: 0.85}

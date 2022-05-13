@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class BuildProc : MonoBehaviour
 {
-    [SerializeField]
-    private Tower towerScript;
-    [SerializeField]
-    private TowerFire fireScript;
-    [SerializeField]
-    private Material prevMaterial;
-
     public float timeToBuild;
     public int TowerCost;
     public AudioClip[] buildingAudios;
     public string Title;
     public Sprite SpritePrev;
 
+    [SerializeField]
+    private Material prevMaterial;
+
     private float time;
     private MeshRenderer[] baseRenderers;
     private Material[] originalMaterials;
+    private Tower towerScript;
+    private TowerFire fireScript;
 
     private void Awake()
     {
@@ -38,6 +36,7 @@ public class BuildProc : MonoBehaviour
                     minObj = obj;
                 }
             }
+
             Vector3 lookAt = minObj.transform.position;
             lookAt.y = transform.position.y;
             transform.rotation = Quaternion.LookRotation(lookAt - transform.position);
@@ -46,6 +45,9 @@ public class BuildProc : MonoBehaviour
 
     void Start()
     {
+        towerScript = GetComponent<Tower>();
+        fireScript = GetComponent<TowerFire>();
+
         baseRenderers = towerScript.baseRenderers;
         originalMaterials = new Material[baseRenderers.Length];
         for (int i = 0; i < baseRenderers.Length; i++)

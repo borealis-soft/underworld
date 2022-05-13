@@ -10,7 +10,7 @@ public class Tower : MonoBehaviour
 
 
     [SerializeField]
-    private GameObject[] TowerUpgrades;
+    private GameObject[] TowerUpgrades = null;
     [SerializeField]
     private Towers[] NetTowerUpgrades;
     [SerializeField]

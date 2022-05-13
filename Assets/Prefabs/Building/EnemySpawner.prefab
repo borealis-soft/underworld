@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3060682689526180846}
   - component: {fileID: 6453425899715129471}
   - component: {fileID: 4007170681018900473}
+  - component: {fileID: -2543058119252721402}
   - component: {fileID: 4689597520938108782}
   m_Layer: 0
   m_Name: EnemySpawner
@@ -66,9 +67,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195d88907dce0134b93d0a109195be5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerScript: {fileID: 6453425899715129471}
-  fireScript: {fileID: 0}
-  prevMaterial: {fileID: 2100000, guid: 747712041556e3846aec2597caf60781, type: 2}
   timeToBuild: 3
   TowerCost: 140
   buildingAudios:
@@ -76,6 +74,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d9ffad3db923b3f46b4ed43b86c24ac4, type: 3}
   Title: "\u041A\u0430\u0437\u0430\u0440\u043C\u0430 \u0441\u0444\u0435\u0440\u0443\u0441\u043E\u0432"
   SpritePrev: {fileID: 21300000, guid: 0d8e73201fdc5274d8a0eca5e4ab306e, type: 3}
+  prevMaterial: {fileID: 2100000, guid: 747712041556e3846aec2597caf60781, type: 2}
+--- !u!114 &-2543058119252721402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984693596158939096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beaa9665d1c95094a8863ad3608b40dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldcount: 2
+  enemyCount: 3
+  spawnEnemy: {fileID: 3367716490499032830, guid: e8d7cf1138371d7469f4d273be344d7b, type: 3}
 --- !u!82 &4689597520938108782
 AudioSource:
   m_ObjectHideFlags: 0
@@ -199,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154142845855469325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 0, z: -0.554}
+  m_LocalPosition: {x: -0.04, y: 0, z: 0.554}
   m_LocalScale: {x: 0.43152484, y: 0.40907, z: 0.22446413}
   m_Children: []
   m_Father: {fileID: 5154697366439402421}
