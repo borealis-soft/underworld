@@ -7,5 +7,6 @@ public class SpawnTower : MonoBehaviour
 {
     public int goldcount;
     public int enemyCount;
+    public float timeUntilSpawn;
     public Enemys spawnEnemyId;
 }

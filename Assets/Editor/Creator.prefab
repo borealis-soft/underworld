@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &847055331384182149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8106021472942966190}
+  - component: {fileID: 429722810430373576}
+  m_Layer: 0
+  m_Name: Creator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8106021472942966190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847055331384182149}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.1873755, y: 4.4319677, z: 6.7257175}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &429722810430373576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847055331384182149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645d2bf8175edcd4a9abd1bece55436d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  CellPrefab: {fileID: 6362979535469303618, guid: 842534ca9e770814cadac08a7730d583, type: 3}
+  isNetworkCell: 1
+  L_RoadPref: {fileID: 7815944281732858574, guid: 8a719a63c4dbe264f9705896369a399c, type: 3}
+  T_RoadPref: {fileID: 3937005515018831745, guid: 57b40a46bac480f43a893bde792bac56, type: 3}
+  X_RoadPref: {fileID: 2583104825499089238, guid: 305f62287a7de2d4fa98d86677252a3a, type: 3}
+  RoadPref: {fileID: 5740511649065708803, guid: 996216c24236029409e9c7651e13a3e3, type: 3}
+  Width: 21
+  Length: 30
+  PixelMap: {fileID: 2800000, guid: 42a011b068c1a824a81d844497b0628a, type: 3}
+  buildDefenceTowers: 000000000300000006000000
+  buildUnitTowers: 090000000a0000000b000000
+  RadiantColorG: 128
+  DireColor: {r: 0, g: 1, b: 0, a: 1}

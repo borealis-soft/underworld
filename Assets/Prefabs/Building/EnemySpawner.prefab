@@ -89,7 +89,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldcount: 2
   enemyCount: 3
-  spawnEnemy: {fileID: 3367716490499032830, guid: e8d7cf1138371d7469f4d273be344d7b, type: 3}
+  timeUntilSpawn: 1
+  spawnEnemyId: 0
 --- !u!82 &4689597520938108782
 AudioSource:
   m_ObjectHideFlags: 0
@@ -246,7 +247,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a8b167ba3921c7d4697e5e32fa933fa8, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -342,7 +343,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a8b167ba3921c7d4697e5e32fa933fa8, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

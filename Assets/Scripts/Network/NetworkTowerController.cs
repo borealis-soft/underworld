@@ -69,6 +69,6 @@ public enum Towers
     MagicLvl2,
     MagicLvl3,
     EnemySpawnerLvl1,
-    EnemySpawnerLvl2,
-    EnemySpawnerLvl3,
+    SkeletonSpawnerLvl1,
+    BossSpawner,
 }

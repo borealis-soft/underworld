@@ -12,10 +12,12 @@ public class PlayerResourses : NetworkBehaviour
     public NetworkVariable<int> gold = new NetworkVariable<int>(1000);
     public NetworkVariable<int> playerHP = new NetworkVariable<int>(20);
     public NetworkVariable<int> goldPerSecond = new NetworkVariable<int>(1);
-    public NetworkSpawner MySpawner;
     public ClientRpcParams callbackRpcParams;
     public ClientRpcParams callbackApponentRpcParams;
     public ClientRpcParams callbackViewersRpcParams;
+
+    [HideInInspector]
+    public NetworkSpawner MySpawner;
 
     private int defaulGold, defaultHP;
     private float time = 1;
@@ -30,61 +32,43 @@ public class PlayerResourses : NetworkBehaviour
         if (IsOwner)
         {
             SetSideServerRpc();
+            if (side.Value != Side.Viewer)
+                 StartCoroutine(SetSpawner());
         }
-
-        callbackRpcParams = new ClientRpcParams
-        {
-            Send = new ClientRpcSendParams
-            {
-                TargetClientIds = new ulong[] { OwnerClientId }
-            }
-        };
-
         if (IsServer)
         {
-            callbackApponentRpcParams = new ClientRpcParams
-            {
-                Send = new ClientRpcSendParams
-                {
-                    TargetClientIds = new ulong[] { 1 }
-                }
-            };
-
-            callbackViewersRpcParams = new ClientRpcParams
-            {
-                Send = new ClientRpcSendParams()
-            };
+            SetCallbackParams();
         }
-
-        if (side.Value == Side.None)
-            Time.timeScale = 0f;
-
         //MainMenuControls.Instance.ResetAll += Reset;
     }
 
     private void Update()
     {
-        if (side.Value == Side.Viewer)
-            return;
-
-        if (MySpawner == null && side.Value != Side.None)
-        {
-            NetworkSpawner[] spawners = FindObjectsOfType<NetworkSpawner>();
-            if (spawners.Length > 2)
-                Debug.LogError("На сцене слишком много спавнеров!");
-            if (spawners != null && spawners.Length == 2)
-            {
-                MySpawner = spawners[spawners[0].Side_ == side.Value ? 0 : 1];
-                if (MySpawner.Side_ == side.Value)
-                    Time.timeScale = 1f;
-                else
-                    MySpawner = null;
-            }
-        }
-
         if (IsServer)
         {
             PassiveGoldGetting();
+        }
+    }
+
+    private IEnumerator SetSpawner()
+    {
+        while(MySpawner == null)
+        {
+            if (side.Value != Side.None)
+            {
+                NetworkSpawner[] spawners = FindObjectsOfType<NetworkSpawner>();
+                if (spawners.Length > 2)
+                    Debug.LogError("На сцене слишком много спавнеров!");
+                if (spawners != null && spawners.Length == 2)
+                {
+                    MySpawner = spawners[spawners[0].Side_ == side.Value ? 0 : 1];
+                    if (MySpawner.Side_ != side.Value)
+                        MySpawner = null;
+                }
+                break;
+            }
+            else
+                yield return new WaitForSeconds(0.05f);
         }
     }
 
@@ -97,6 +81,30 @@ public class PlayerResourses : NetworkBehaviour
             time = 1;
             gold.Value += goldPerSecond.Value;
         }
+    }
+
+    private void SetCallbackParams()
+    {
+        callbackRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { OwnerClientId }
+            }
+        };
+
+        callbackApponentRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { 1 }
+            }
+        };
+
+        callbackViewersRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams()
+        };
     }
 
     public void CreateTower(Towers buildingTower, Vector3 pos, Side side_)
@@ -127,7 +135,7 @@ public class PlayerResourses : NetworkBehaviour
         {
             NetworkObject client = NetworkManager.ConnectedClients[clientId].PlayerObject;
             PlayerResourses clientResources = client.gameObject.GetComponent<PlayerResourses>();
-            clientResources.MySpawner.NetworkWaves.Add(new NetworkSpawner.Wave(spawnTower.enemyCount, spawnTower.spawnEnemyId));
+            clientResources.MySpawner.NetworkWaves.Add(new NetworkSpawner.Wave(spawnTower.enemyCount, spawnTower.spawnEnemyId, spawnTower.timeUntilSpawn));
         }
     }
 
@@ -213,6 +221,12 @@ public class PlayerResourses : NetworkBehaviour
     {
         Time.timeScale = flag ? 0f : 1f;
         MainMenuControls.Instance.WinMenu.SetActive(flag);
+    }
+
+    [ServerRpc]
+    public void ImReadyServerRpc()
+    {
+        PlayersManager.Instance.PlayerReady();
     }
 
     //private void Reset()

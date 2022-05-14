@@ -16,6 +16,7 @@ public class MainMenuControls : MonoBehaviour
     [SerializeField]
     private GameObject Settings;
 
+    public GameObject WaitPlayersPanel;
     public GameObject WinMenu;
     public GameObject LoseMenu;
     public Spawner[] spawners;

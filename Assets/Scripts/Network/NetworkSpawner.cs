@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,23 +9,26 @@ public class NetworkSpawner : NetworkBehaviour
     [Serializable]
     public struct Wave : INetworkSerializable, IEquatable<Wave>
     {
-        public Wave(int count, Enemys enemy)
+        public Wave(int count, Enemys enemy, float time)
         {
             CountEnemy = count;
             EnemyId = enemy;
+            timeUntilSpawn = time;
         }
         public int CountEnemy;
+        public float timeUntilSpawn;
         public Enemys EnemyId;
 
         public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
         {
             serializer.SerializeValue(ref CountEnemy);
             serializer.SerializeValue(ref EnemyId);
+            serializer.SerializeValue(ref timeUntilSpawn);
         }
 
         public bool Equals(Wave other)
         {
-            return CountEnemy == other.CountEnemy && EnemyId == other.EnemyId;
+            return CountEnemy == other.CountEnemy && EnemyId == other.EnemyId && timeUntilSpawn == other.timeUntilSpawn;
         }
     }
 
@@ -78,20 +81,8 @@ public class NetworkSpawner : NetworkBehaviour
             TimeUntilNewRound -= Time.deltaTime;
         else if (TimeUntilSpawnEnemy > 0)
             TimeUntilSpawnEnemy -= Time.deltaTime;
-        else 
+        else
         {
-            TimeUntilSpawnEnemy = baseTimeUntilSpawnEnemy;
-            if (currentEnemyId >= NetworkWaves[currentWaveId].CountEnemy)
-            {
-                currentEnemyId = 0;
-                currentWaveId++;
-            }
-            if (currentWaveId >= NetworkWaves.Count)
-            {
-                TimeUntilNewRound = baseTimeUntilRound;
-                currentWaveId = 0;
-            }
-
             Enemy newEnemy = EnemyMap[NetworkWaves[currentWaveId].EnemyId] as Enemy;
             Enemy enemy = Instantiate(newEnemy, transform.position, Quaternion.identity, transform);
             enemy.Points = points;
@@ -99,6 +90,17 @@ public class NetworkSpawner : NetworkBehaviour
             enemy.OnDeath += PlayerResourses.Singleton.EnemyKillServerRpc;
             enemy.OnPass += PlayerResourses.Singleton.ReduceHPServerRpc;
             currentEnemyId++;
+            if (currentEnemyId >= NetworkWaves[currentWaveId].CountEnemy)
+            {
+                currentEnemyId = 0;
+                currentWaveId++;
+                if (currentWaveId >= NetworkWaves.Count)
+                {
+                    TimeUntilNewRound = baseTimeUntilRound;
+                    currentWaveId = 0;
+                }
+            }
+            TimeUntilSpawnEnemy = NetworkWaves[currentWaveId].timeUntilSpawn;
         }
     }
 }

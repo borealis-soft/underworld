@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\Network\NetworkTowerController.cs" />
     <Compile Include="Assets\Scripts\Network\StartConnect.cs" />
     <Compile Include="Assets\Scripts\Network\GameMode.cs" />
+    <Compile Include="Assets\Scripts\Network\WaitPlayersController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

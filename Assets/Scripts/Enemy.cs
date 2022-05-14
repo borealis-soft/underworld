@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Enemy : MonoBehaviour
     public float MaxHP;
     public int PlayerDamage;
     public Side Side_ = Side.None;
+    public Image HPImage;
 
     [SerializeField]
     private int enemyCost;
@@ -43,6 +45,7 @@ public class Enemy : MonoBehaviour
         {
             Destroy(other.gameObject);
             HP -= other.GetComponent<FlyBullet>().Damage;
+            HPImage.fillAmount = HP / MaxHP;
             if (HP <= 0)
             {
                 if (GameMode.Singleton == null || GameMode.Singleton.gameMod == GameMode.GameMods.SingleGame || 
